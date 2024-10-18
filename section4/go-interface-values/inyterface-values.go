@@ -21,13 +21,13 @@ func (p *Person) allInfo() string {
 type myNum int
 
 func (m myNum) allInfo() string {
-	return "Number is :" + strconv.Itoa(int(m))
+	return "Number is: " + strconv.Itoa(int(m))
 }
 
 type F float64
 
-func (f F) allInfo() {
-	fmt.Println(f)
+func (f F) allInfo() string {
+	return "Number is: " + strconv.FormatFloat(float64(f), 'f', -1, 64)
 }
 
 func main() {
@@ -36,11 +36,12 @@ func main() {
 		name:    "Dias",
 		surname: "Karibaev",
 	}
-	myInterface.allInfo()
+	fmt.Println(myInterface.allInfo())
 
 	myInterface = myNum(5)
-	myInterface.allInfo()
+	fmt.Println(myInterface.allInfo())
 
 	myInterface = F(1.5)
+	fmt.Println(myInterface.allInfo())
 
 }
