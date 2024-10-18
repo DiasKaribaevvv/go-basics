@@ -24,4 +24,5 @@ func (my MyFloat) square() float64 {
 
 func main() {
 	fmt.Println(MyFloat(-2.0).square())
+	fmt.Println("Hello dias")
 }
